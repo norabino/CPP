@@ -2,23 +2,23 @@ NAME = PhoneBook
 OBJDIR = objects
 FLAGS = -Wall -Wextra -Werror -std=c++98
 SOURCES = src/main.cpp \
-            src/Phonebook_class.cpp \
-            src/Contact_class.cpp \
-            src/utils.cpp \
+            src/Phonebook.cpp \
+            src/Contact.cpp \
+            src/Utils.cpp \
 
 OBJECTS = $(SOURCES:src/%.cpp=$(OBJDIR)/%.o)
 
 $(OBJDIR)/%.o: src/%.cpp
 	@mkdir -p $(dir $@)
-	g++ $(FLAGS) -c $< -o $@
+	c++ $(FLAGS) -c $< -o $@
 
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	g++ $(FLAGS) -o $(NAME) $(OBJECTS)
+	c++ $(FLAGS) -o $(NAME) $(OBJECTS)
 
 %.o: %.cpp
-	g++ $(FLAGS) -c $< -o $@
+	c++ $(FLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(OBJDIR)

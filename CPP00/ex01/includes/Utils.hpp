@@ -1,35 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook_class.hpp                                :+:      :+:    :+:   */
+/*   Utils.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/29 17:47:50 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/02 16:55:35 by norabino         ###   ########.fr       */
+/*   Created: 2025/10/01 16:16:05 by norabino          #+#    #+#             */
+/*   Updated: 2025/10/02 17:41:14 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_HPP
-# define PHONEBOOK_CLASS_HPP
+#ifndef UTILS_HPP
+# define UTILS_HPP
 
-#include "../includes/Contact_class.hpp"
-#include "../includes/utils.hpp"
-
-#include <iostream>
-#include <iomanip>
-
-class Phonebook
-{
-public:
-	Phonebook( void );
-	~Phonebook( void );
-	void	add( void );
-	void	search( void );
-private:
-	int _ContactID;
-	int	_ContactCPT;
-	Contact	tab[8];
-};
+std::string	is_to_long( std::string input );
+int			only_whitespace( std::string str );
+std::string	clear_string( std::string str );
+void		print_firstline( void );
 
 #endif

@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook_class.cpp                                :+:      :+:    :+:   */
+/*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 17:52:47 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/02 17:07:06 by norabino         ###   ########.fr       */
+/*   Updated: 2025/10/02 17:28:14 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Phonebook_class.hpp"
-#include "../includes/utils.hpp"
+#include "../includes/Phonebook.hpp"
 
 Phonebook::Phonebook( void )
 {

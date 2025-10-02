@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact_class.cpp                                  :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 14:20:32 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/02 16:53:57 by norabino         ###   ########.fr       */
+/*   Updated: 2025/10/02 17:41:28 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Contact_class.hpp"
-#include "../includes/utils.hpp"
+#include "../includes/Phonebook.hpp"
 
 Contact::Contact( void )
 {
