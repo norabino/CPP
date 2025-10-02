@@ -1,15 +1,15 @@
 NAME = megaphone
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SOURCES = megaphone.cpp
+SOURCES = Megaphone.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	g++ $(CFLAGS) -o $(NAME) $(OBJECTS)
+	c++ $(CFLAGS) -o $(NAME) $(OBJECTS)
 
 %.o: %.cpp
-	g++ $(CFLAGS) -c $< -o $@
+	c++ $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJECTS)
@@ -19,7 +19,7 @@ fclean: clean
 
 re: fclean all
 
-dev: fclean
-	git add *; git commit -m "CPP00/ex00" ; git push --force
+dev : fclean
+	git add . ; git diff --cached --quiet ; git commit -m "CPP00/ex00" ; git push
 
 .PHONY: all clean fclean re
