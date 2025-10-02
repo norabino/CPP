@@ -28,7 +28,7 @@ fclean: clean
 
 re: fclean all
 
-dev: fclean
-	git add *; git commit -m "CPP00/ex01" ; git push --force
+dev : fclean
+	git add . ; git diff --cached --quiet ; git commit -m "CPP00/ex01" ; git push
 
 .PHONY: all clean fclean re
