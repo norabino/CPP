@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 17:47:50 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/02 17:30:54 by norabino         ###   ########.fr       */
+/*   Updated: 2025/10/02 18:09:29 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 #include "Utils.hpp"
 
 #include <iostream>
-#include <iomanip>
-#include <string>
 
 class Phonebook
 {

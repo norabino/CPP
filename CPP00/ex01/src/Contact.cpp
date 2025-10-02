@@ -6,11 +6,11 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 14:20:32 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/02 17:41:28 by norabino         ###   ########.fr       */
+/*   Updated: 2025/10/02 18:06:45 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Phonebook.hpp"
+#include "../includes/Contact.hpp"
 
 Contact::Contact( void )
 {

@@ -6,12 +6,15 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 16:16:05 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/02 17:41:14 by norabino         ###   ########.fr       */
+/*   Updated: 2025/10/02 18:09:03 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef UTILS_HPP
 # define UTILS_HPP
+
+#include <iostream>
+#include <iomanip>
 
 std::string	is_to_long( std::string input );
 int			only_whitespace( std::string str );

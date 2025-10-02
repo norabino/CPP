@@ -6,14 +6,15 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 14:12:23 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/02 17:42:01 by norabino         ###   ########.fr       */
+/*   Updated: 2025/10/02 18:08:34 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
-#include <string>
+#include "Utils.hpp"
+#include <iostream>
 
 class Contact
 {
