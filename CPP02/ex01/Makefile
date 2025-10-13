@@ -1,7 +1,7 @@
 NAME = fixed
 OBJDIR = objects
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SOURCES = main.cpp \
+SOURCES = src/main.cpp \
 		src/Fixed.cpp
 
 OBJECTS = $(SOURCES:src/%.cpp=$(OBJDIR)/%.o)
