@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:54:38 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/13 15:27:38 by norabino         ###   ########.fr       */
+/*   Updated: 2025/10/13 15:53:58 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ int main( void )
 	std::cout << a << std::endl;
 	std::cout << a++ << std::endl;
 	std::cout << a << std::endl;
-	Fixed const c (Fixed(10.0f) / Fixed(0));
-	std::cout << "div = " << c << std::endl;
 	std::cout << b << std::endl;
 
 	std::cout << Fixed::max( a, b ) << std::endl;
