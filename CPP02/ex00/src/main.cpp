@@ -6,11 +6,11 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 23:26:15 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/11 00:02:17 by norabino         ###   ########.fr       */
+/*   Updated: 2025/10/13 15:16:10 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Fixed.hpp"
+#include "../includes/Fixed.hpp"
 
 int main( void )
 {
