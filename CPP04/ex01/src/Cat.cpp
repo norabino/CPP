@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 15:16:34 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/14 17:26:57 by norabino         ###   ########.fr       */
+/*   Updated: 2025/10/14 17:37:03 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ Cat const	&Cat::operator=( Cat const &other )
 
 Cat::~Cat( void )
 {
-	std::cout << "Cat destructor called." << std::endl;
 	delete(this->_Brain);
+	std::cout << "Cat destructor called." << std::endl;
 }
 
 void	Cat::makeSound( void ) const

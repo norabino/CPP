@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 15:16:51 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/14 17:26:51 by norabino         ###   ########.fr       */
+/*   Updated: 2025/10/14 17:36:59 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ Dog const	&Dog::operator=( Dog const &other )
 
 Dog::~Dog( void )
 {
-	std::cout << "Dog destructor called." << std::endl;
 	delete( this->_Brain );
+	std::cout << "Dog destructor called." << std::endl;
 }
 
 void	Dog::makeSound( void ) const
