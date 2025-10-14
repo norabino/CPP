@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 16:30:17 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/14 16:31:31 by norabino         ###   ########.fr       */
+/*   Updated: 2025/10/14 16:51:46 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,14 @@
 
 WrongAnimal::WrongAnimal( void ) : type_( "" )
 {
-}
-
-WrongAnimal::WrongAnimal( std::string type ) : type_( type )
-{
+	std::cout << "WrongAnimal constructor called." << std::endl;
 }
 
 WrongAnimal::WrongAnimal( WrongAnimal const & other )
 {
 	*this = other;
+	std::cout << "WrongAnimal copy constructor called." << std::endl;
+
 }
 
 WrongAnimal const	&WrongAnimal::operator=( WrongAnimal const &other )
@@ -34,6 +33,7 @@ WrongAnimal const	&WrongAnimal::operator=( WrongAnimal const &other )
 
 WrongAnimal::~WrongAnimal( void )
 {
+	std::cout << "WrongAnimal destructor called." << std::endl;
 }
 
 void	WrongAnimal::makeSound( void ) const

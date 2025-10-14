@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 16:16:48 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/14 16:18:01 by norabino         ###   ########.fr       */
+/*   Updated: 2025/10/14 16:34:28 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@
 
 class WrongAnimal
 {
+private:
+	WrongAnimal( std::string );
+
 protected:
 	std::string type_;
 
 public:
 	WrongAnimal( void );
-	WrongAnimal( std::string );
 	WrongAnimal( WrongAnimal const & );
 	virtual ~WrongAnimal( void );
 
