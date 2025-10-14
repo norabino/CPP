@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 15:16:34 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/14 16:51:46 by norabino         ###   ########.fr       */
+/*   Updated: 2025/10/14 17:27:14 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 Cat::Cat( void )
 {
-	this->type_ = "Cat";
 	std::cout << "Cat constructor called." << std::endl;
+	this->type_ = "Cat";
 }
 
 Cat::Cat( Cat const & other ) : Animal( other )
 {
-	*this = other;
 	std::cout << "Cat constructor called." << std::endl;
+	*this = other;
 }
 
 Cat const	&Cat::operator=( Cat const &other )

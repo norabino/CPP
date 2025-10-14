@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 15:07:10 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/14 16:51:46 by norabino         ###   ########.fr       */
+/*   Updated: 2025/10/14 17:27:10 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ Animal::Animal( void ) : type_( "" )
 
 Animal::Animal( Animal const & other )
 {
-	*this = other;
 	std::cout << "Animal copy constructor called." << std::endl;
+	*this = other;
 }
 
 Animal const	&Animal::operator=( Animal const &other )
