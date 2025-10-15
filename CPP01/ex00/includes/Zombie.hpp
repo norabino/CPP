@@ -6,11 +6,11 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:15:45 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/06 16:02:01 by norabino         ###   ########.fr       */
+/*   Updated: 2025/10/15 16:33:09 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE8HPP
+#ifndef ZOMBIE_HPP
 #define ZOMBIE_HPP
 
 #include <iostream>
