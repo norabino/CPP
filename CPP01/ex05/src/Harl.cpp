@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:17:38 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/07 14:22:48 by norabino         ###   ########.fr       */
+/*   Updated: 2025/10/16 15:34:21 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Harl::~Harl( void )
 void	Harl::complain( std::string level )
 {
 	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	void (Harl::*pointer_function[4])(void)const = {&Harl::_debug, &Harl::_info, &Harl::_warning, &Harl::_error};
+	void (Harl::*pointer_function[4])(void)const = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	int i = 0;
 	while (i < 4)
 	{
@@ -33,20 +33,20 @@ void	Harl::complain( std::string level )
 	}
 }
 
-void	Harl::_debug(void) const {
+void	Harl::debug(void) const {
 	std::cout << "msg DEBUG: __ Welcome Welcome __" << std::endl;
 }
 
 
-void	Harl::_info(void) const {
+void	Harl::info(void) const {
 	std::cout << "msg INFO: Yhea ! " << std::endl;
 }
 
 
-void	Harl::_warning(void) const {
+void	Harl::warning(void) const {
 	std::cout << "msg WARNING: Of course ... " << std::endl;
 }
 
-void	Harl::_error(void) const {
+void	Harl::error(void) const {
 	std::cout << "msg ERROR: OMG !! " << std::endl;
 }
