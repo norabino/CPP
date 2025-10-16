@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 17:15:13 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/06 18:52:04 by norabino         ###   ########.fr       */
+/*   Updated: 2025/10/16 15:27:32 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	void	attack(void);
 private:
 	std::string	_name;
-	Weapon *_WeaponType;
+	Weapon *type;
 };
 
 #endif

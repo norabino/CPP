@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 17:04:30 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/06 18:12:14 by norabino         ###   ########.fr       */
+/*   Updated: 2025/10/16 15:26:26 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	std::string getType( void ) const;
 	void		setType( std::string name );
 private:
-	std::string _type;
+	std::string type;
 };
 
 #endif
