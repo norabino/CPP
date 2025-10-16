@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:50:53 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/13 15:18:58 by norabino         ###   ########.fr       */
+/*   Updated: 2025/10/16 17:46:18 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ public:
 	Fixed 	operator--( int );
 
 	static Fixed		&min( Fixed &, Fixed & );
-	static Fixed		&max( Fixed &, Fixed & );
 	static Fixed	const &min( Fixed const &, Fixed const & );
+	static Fixed		&max( Fixed &, Fixed & );
 	static Fixed	const &max( Fixed const &, Fixed const & );
 };
 
