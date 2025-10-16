@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 13:51:52 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/07 14:17:11 by norabino         ###   ########.fr       */
+/*   Updated: 2025/10/16 15:21:27 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ public:
 	~Harl( void );
 	void	complain( std::string );
 private:
-	void	_debug( void ) const;
-	void	_info( void ) const;
-	void	_warning( void ) const;
-	void	_error( void ) const;
+	void	debug( void ) const;
+	void	info( void ) const;
+	void	warning( void ) const;
+	void	error( void ) const;
 };
 
 #endif
