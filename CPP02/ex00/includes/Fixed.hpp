@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 22:32:10 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/10 23:58:31 by norabino         ###   ########.fr       */
+/*   Updated: 2025/10/16 17:39:06 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ public:
 	~Fixed( void );
 
 	int	getRawBits( void ) const;
+    void    setRawBits( int const raw );
 	Fixed	&operator=( Fixed const & );
 };
 
