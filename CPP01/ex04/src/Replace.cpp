@@ -6,58 +6,52 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 19:13:37 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/06 20:08:36 by norabino         ###   ########.fr       */
+/*   Updated: 2025/10/16 17:09:06 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Replace.hpp"
 
-int	try_to_open(std::ifstream &inputed_file, std::ofstream &output_file)
+bool	checkFile( std::string filename )
 {
-	if (!inputed_file.is_open())
-	{
-		std::cout << "Could not open inputed file" << std::endl;
-		return (false);
-	}
-	if (!output_file.is_open())
-	{
-		std::cout << "could not open output file." << std::endl;
-		inputed_file.close();
-		return (false);
-	}
-	return (true);
+	struct	stat info;
+
+	if ( stat(filename.c_str(), &info) )
+		return ( std::cout << "File inexistant.." << std::endl, false );
+	if ( info.st_mode & S_IFDIR )
+		return ( std::cout << "The 'file' is a directory.." << std::endl, false );
+	return ( true );
 }
 
 int	replace(std::string filename, std::string s1, std::string s2)
 {
-	std::ifstream inputfile(filename.c_str());
-	std::ofstream	outputfile((filename + ".replace").c_str());
+	if ( !checkFile( filename ))
+		return (0);
 
-	if (!try_to_open(inputfile, outputfile))
-		return (0);
+	std::ifstream fileIn;
+	fileIn.open( filename.c_str() );
 	
-	std::string	line;
-	int	flg = 0;
-	while (getline(inputfile, line))
+	std::string file_str;
+	char c;
+	while ( fileIn.get(c) )
+		file_str += c;
+	fileIn.close();
+
+	size_t ret = file_str.find( s1, 0 );
+	while ( ret != std::string::npos )
 	{
-		size_t	i = 0;
-		size_t ret = line.find(s1, i);
-		while (ret != std::string::npos)
-		{
-			line.erase(ret, s1.length());
-			line.insert(ret, s2);
-			i = ret + s2.length();
-			ret = line.find(s1, i);
-			flg = 1;
-		}
-		outputfile << line << std::endl;
+		file_str.erase( ret, s1.length() );
+		file_str.insert( ret, s2 );
+		ret = file_str.find( s1, ret );
 	}
-	inputfile.close();
-	outputfile.close();
-	if (!flg)
-	{
-		std::cout << "No target found." << std::endl;
-		return (0);
-	}
+
+	std::ofstream fileOut;
+	fileOut.open( (filename + ".replace").c_str() );
+	if ( !fileOut.good() )
+		return ( std::cout << "Output file cannot be created.." << std::endl, 0);
+
+	fileOut << file_str;
+	fileOut.close();
+
 	return (1);
 }

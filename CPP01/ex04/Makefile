@@ -2,7 +2,7 @@ NAME = Replace
 OBJDIR = objects
 FLAGS = -Wall -Wextra -Werror -std=c++98 -I.
 SOURCES = main.cpp \
-	src/Parsing.cpp \
+	src/checkInput.cpp \
 	src/Replace.cpp
 
 OBJECTS = $(SOURCES:.cpp=.o)
