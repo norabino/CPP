@@ -6,11 +6,12 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:59:40 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/06 16:24:14 by norabino         ###   ########.fr       */
+/*   Updated: 2025/10/16 15:12:16 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define Z
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
 #include <iostream>
 
@@ -26,3 +27,5 @@ private:
 };
 
 Zombie* zombieHorde( int N, std::string name );
+
+#endif

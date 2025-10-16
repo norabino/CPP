@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 16:27:05 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/06 16:34:16 by norabino         ###   ########.fr       */
+/*   Updated: 2025/10/16 15:24:55 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,14 @@ int	main( void )
 	Zombie *ZombieHorde;
 
 	ZombieHorde = zombieHorde(Nb_Horde, "allo");
-	while (i < Nb_Horde )
+	if ( ZombieHorde )
 	{
-		ZombieHorde[i].announce();
-		i++;
+		while (i < Nb_Horde )
+		{
+			ZombieHorde[i].announce();
+			i++;
+		}
+		delete[] ZombieHorde;
 	}
-	delete[] ZombieHorde;
 	return (0);
 }

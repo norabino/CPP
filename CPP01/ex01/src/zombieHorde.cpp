@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 16:12:23 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/06 16:25:38 by norabino         ###   ########.fr       */
+/*   Updated: 2025/10/16 15:24:28 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,15 @@ Zombie* zombieHorde( int N, std::string name )
 	Zombie *ZombieHorde;
 	int		i = 0;
 
-	ZombieHorde = new Zombie[N];
-	while ( i < N )
+	if (N > 0)
 	{
-		ZombieHorde[i].setName(name);
-		i++;
+		ZombieHorde = new Zombie[N];
+		while ( i < N )
+		{
+			ZombieHorde[i].setName(name);
+			i++;
+		}
+		return (ZombieHorde);
 	}
-	return (ZombieHorde);
+	return (NULL);
 }
