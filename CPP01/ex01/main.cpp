@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
+/*   By: norabino <norabino@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 16:27:05 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/16 15:24:55 by norabino         ###   ########.fr       */
+/*   Updated: 2025/10/23 19:08:54 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main( void )
 {
-	int	Nb_Horde = 5;
+	int	Nb_Horde = 0;
 	int	i = 0;
 	Zombie *ZombieHorde;
 

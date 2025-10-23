@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
+/*   By: norabino <norabino@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 16:12:23 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/16 15:24:28 by norabino         ###   ########.fr       */
+/*   Updated: 2025/10/23 19:08:19 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ Zombie* zombieHorde( int N, std::string name )
 		}
 		return (ZombieHorde);
 	}
+	else
+		std::cout << "Zombie number can't be less than one." << std::endl;
 	return (NULL);
 }
