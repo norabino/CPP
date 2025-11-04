@@ -1,6 +1,6 @@
 NAME = fixed
 OBJDIR = objects
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98 -g
 SOURCES = src/main.cpp \
 		src/Fixed.cpp
 

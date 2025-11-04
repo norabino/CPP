@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 11:52:39 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/13 12:06:32 by norabino         ###   ########.fr       */
+/*   Updated: 2025/11/04 19:58:50 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include <iostream>
 #include <cmath>
+
+#define INT_MAX 2147483647
+#define INT_MIN -2147483648
 
 class Fixed {
 private:

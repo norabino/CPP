@@ -6,10 +6,9 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 11:59:15 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/13 13:36:40 by norabino         ###   ########.fr       */
+/*   Updated: 2025/11/04 20:43:55 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../includes/Fixed.hpp"
 
@@ -18,14 +17,30 @@ Fixed::Fixed( void ) : _value(0)
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed( const int value ) : _value(value << _fracBits)
+Fixed::Fixed( const int val )  
 {
 	std::cout << "Int constructor called" << std::endl;
+	if (val <= (INT_MAX / (1 << _fracBits)) && val >= (INT_MIN / (1 << _fracBits)))
+        _value = val << this->_fracBits;
+    else
+    {
+        this->_value = 0;
+        std::cout << "Warning: Int value " << val << " is out of range for " 
+            << _fracBits << "-bit fixed-point representation, set to 0" << std::endl;
+	}
 }
 
-Fixed::Fixed( const float value ) : _value(roundf(value * (1 << _fracBits)))
+Fixed::Fixed( const float val )
 {
 	std::cout << "Float constructor called" << std::endl;
+	if (val <= (INT_MAX / (1 << _fracBits)) && val >= (INT_MIN / (1 << _fracBits)))
+        _value = roundf(val *(1 << this->_fracBits));
+    else
+    {
+        this->_value = 0;
+        std::cout << "Warning: Float value " << val << " is out of range for " 
+            << _fracBits << "-bit fixed-point representation, set to 0" << std::endl;
+	}
 }
 
 Fixed::Fixed( Fixed const &other )
@@ -53,7 +68,7 @@ int		Fixed::toInt( void ) const
 
 Fixed	&Fixed::operator=( Fixed const& other )
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "Operator = called" << std::endl;
 	this->_value = other._value;
 	return ( *this );
 }
