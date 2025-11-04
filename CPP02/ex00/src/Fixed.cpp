@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 23:52:59 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/16 17:44:53 by norabino         ###   ########.fr       */
+/*   Updated: 2025/11/04 18:36:19 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ Fixed::Fixed( Fixed const &other )
 Fixed::~Fixed( void )
 {
 	std::cout << "Destructor called" << std::endl;
-
 }
 
 void    Fixed::setRawBits( int const raw )
