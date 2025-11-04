@@ -6,26 +6,18 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:50:53 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/16 17:46:18 by norabino         ###   ########.fr       */
+/*   Updated: 2025/11/04 20:51:08 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-+
--
-*
-/
-++a
-a++
---a
-a--
-*/
 
 #ifndef FIXED_HPP
 #define FIXED_HPP
 
 #include <iostream>
 #include <cmath>
+
+#define INT_MAX 2147483647
+#define INT_MIN -2147483648
 
 class Fixed {
 private:

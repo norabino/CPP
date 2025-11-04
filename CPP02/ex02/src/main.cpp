@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:54:38 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/13 15:53:58 by norabino         ###   ########.fr       */
+/*   Updated: 2025/11/04 21:16:54 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int main( void )
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 
+	std::cout << (a>b) << std::endl;
 	std::cout << Fixed::max( a, b ) << std::endl;
 
 	return (0);
