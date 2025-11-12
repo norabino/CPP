@@ -6,11 +6,12 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 12:28:40 by norabino          #+#    #+#             */
-/*   Updated: 2025/11/07 16:11:07 by norabino         ###   ########.fr       */
+/*   Updated: 2025/11/07 17:14:41 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Bureaucrat.hpp"
+#include "../includes/Form.hpp"
 
 Bureaucrat::Bureaucrat( void )
 {
@@ -85,6 +86,19 @@ void	Bureaucrat::DecrementGrade()
 		throw Bureaucrat::GradeTooLowException();
 	}
 	std::cout << this->_name << "'s new grade is " << ++this->_grade << "." << std::endl;
+}
+
+void Bureaucrat::signForm( Form  &form )
+{
+	try
+	{
+		form.beSigned( *this );
+		std::cout << this->_name << " signed " << form.getName() << std::endl;
+	}
+	catch (const std::exception &e)
+	{
+		std::cout << this->_name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+	}
 }
 
 std::ostream &operator<<( std::ostream &os, Bureaucrat const &instance )

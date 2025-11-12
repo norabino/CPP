@@ -2,7 +2,8 @@ NAME = Bureaucrat
 OBJDIR = objects
 FLAGS = -Wall -Wextra -Werror -std=c++98
 SOURCES = src/main.cpp \
-		src/Bureaucrat.cpp
+		src/Bureaucrat.cpp \
+		src/Form.cpp
 
 OBJECTS = $(SOURCES:src/%.cpp=$(OBJDIR)/%.o)
 
