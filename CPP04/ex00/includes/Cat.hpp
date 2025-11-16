@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
+/*   By: norabino <norabino@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 15:06:38 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/14 16:08:03 by norabino         ###   ########.fr       */
+/*   Updated: 2025/11/16 14:23:00 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#pragma once
 
 #include "Animal.hpp"
 
@@ -28,5 +27,3 @@ public:
 	Cat const &operator=( Cat const & );
 	void	makeSound( ) const;
 };
-
-#endif

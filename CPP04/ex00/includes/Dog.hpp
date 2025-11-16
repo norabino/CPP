@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
+/*   By: norabino <norabino@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 15:00:43 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/14 16:07:52 by norabino         ###   ########.fr       */
+/*   Updated: 2025/11/16 14:23:22 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#pragma once
 
 #include "Animal.hpp"
 
@@ -29,5 +28,3 @@ public:
 	void	makeSound( ) const;
 
 };
-
-#endif

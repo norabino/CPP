@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: norabino <norabino@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 14:58:27 by norabino          #+#    #+#             */
-/*   Updated: 2025/11/16 14:22:22 by norabino         ###   ########.fr       */
+/*   Created: 2025/11/16 14:23:07 by norabino          #+#    #+#             */
+/*   Updated: 2025/11/16 14:26:43 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "iostream"
+#include "WrongAnimal.hpp"
 
-class Animal
+class WrongCat : public WrongAnimal
 {
 private:
-	Animal( std::string );
-protected:
-	std::string type_;
+	WrongCat( std::string );
 
 public:
-	Animal( void );
-	Animal( Animal const & );
-	virtual ~Animal( void );
+	WrongCat( );
+	WrongCat( WrongCat const & );
+	~WrongCat( );
 
-	Animal const &operator=( Animal const & );
-	virtual void	makeSound( void ) const;
-	std::string	getType( void ) const;
+	WrongCat const &operator=( WrongCat const & );
+	void	makeSound( ) const;
 };

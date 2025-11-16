@@ -3,10 +3,10 @@ OBJDIR = objects
 FLAGS = -Wall -Wextra -Werror -std=c++98
 SOURCES = src/main.cpp \
 		src/Animal.cpp \
-		src/WrongAnimal.cpp \
 		src/Cat.cpp \
 		src/Dog.cpp \
-		src/WrongCat.cpp
+		src/WrongCat.cpp \
+		src/WrongAnimal.cpp
 
 OBJECTS = $(SOURCES:src/%.cpp=$(OBJDIR)/%.o)
 
@@ -18,7 +18,6 @@ all: $(NAME)
 
 $(NAME): $(OBJECTS)
 	c++ $(FLAGS) -o $(NAME) $(OBJECTS)
-
 
 
 clean:
