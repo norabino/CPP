@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:39:07 by norabino          #+#    #+#             */
-/*   Updated: 2025/11/16 13:45:35 by norabino         ###   ########.fr       */
+/*   Updated: 2025/11/16 13:55:16 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ FragTrap::FragTrap( void )
 	std::cout << " ⚒️  FragTrap Default Constructor called." << std::endl;
 }
 
-FragTrap::FragTrap( std::string name ) : ClapTrap( name ), _name( name ), _hp( 100 ), _ep( 100 ), _ad( 30 )
+FragTrap::FragTrap( std::string name ) : ClapTrap( name ), name_( name ), hp_( 100 ), ep_( 100 ), ad_( 30 )
 {
 	std::cout << " ⚒️  FragTrap Parametric Constructor called." << std::endl;
 }
@@ -41,33 +41,33 @@ FragTrap	&FragTrap::operator=( FragTrap const &other )
 
 void	FragTrap::attack( const std::string& target )
 {
-	if (_hp <= 0 || _ep <= 0) {
-		std::cout << "FragTrap " << _name << " can't do anything." << std::endl;
+	if (hp_ <= 0 || ep_ <= 0) {
+		std::cout << "FragTrap " << name_ << " can't do anything." << std::endl;
 		return ;
 	}
-	std::cout << "FragTrap " << _name << " attacks " << target << ", causing " << _ad << " points of damage!" << std::endl;
-	this->_ep -= 1;
+	std::cout << "FragTrap " << name_ << " attacks " << target << ", causing " << ad_ << " points of damage!" << std::endl;
+	this->ep_ -= 1;
 }
 
 void	FragTrap::takeDamage( unsigned int amount )
 {
-	if (_hp < (int)amount) {
-		std::cout << "FragTrap " << _name << " is out of combat." << std::endl;
-		_hp = 0;
+	if (hp_ < (int)amount) {
+		std::cout << "FragTrap " << name_ << " is out of combat." << std::endl;
+		hp_ = 0;
 		return ;
 	}
-	this->_hp -= amount;
+	this->hp_ -= amount;
 	std::cout << "FragTrap " << name_ << " lost " << amount << " health points. New amount : " << hp_ << std::endl;
 }
 
 void	FragTrap::beRepaired( unsigned int amount )
 {
-	this->_hp += amount;
-	this->_ep --;
-	std::cout << "FragTrap " << _name << " get repaired  causing " << amount << " energie points gained! " << std::endl;
+	this->hp_ += amount;
+	this->ep_ --;
+	std::cout << "FragTrap " << name_ << " get repaired  causing " << amount << " energie points gained! " << std::endl;
 }
 
 void	FragTrap::highFivesGuys()
 {
-	std::cout << "Fragtrap " << _name << " high fives his guys." << std::endl;
+	std::cout << "Fragtrap " << name_ << " high fives his guys." << std::endl;
 }

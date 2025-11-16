@@ -6,13 +6,13 @@
 /*   By: norabino <norabino@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 16:49:19 by norabino          #+#    #+#             */
-/*   Updated: 2025/11/16 13:46:50 by norabino         ###   ########.fr       */
+/*   Updated: 2025/11/16 13:54:01 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ScavTrap.hpp"
 
-ScavTrap::ScavTrap( void ) : _name( "Default" ), hp_( 100 ), ep_( 50 ), ad_( 20 )
+ScavTrap::ScavTrap( void ) : name_( "Default" ), hp_( 100 ), ep_( 50 ), ad_( 20 )
 {
 	std::cout << " ⚒️  ScavTrap Default Constructor called." << std::endl;
 }
