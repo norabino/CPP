@@ -6,18 +6,18 @@
 /*   By: norabino <norabino@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 16:08:29 by norabino          #+#    #+#             */
-/*   Updated: 2025/11/16 13:19:00 by norabino         ###   ########.fr       */
+/*   Updated: 2025/11/16 13:23:48 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ClapTrap.hpp"
 
-ClapTrap::ClapTrap( void ) : _name( "Default" ), _HP( 10 ), _EP( 10 ), _AD( 0 )
+ClapTrap::ClapTrap( void ) : _name( "Default" ), _hp( 10 ), _ep( 10 ), _ad( 0 )
 {
 	std::cout << " ~ ClapTrap Default Constructor called." << std::endl;
 }
 
-ClapTrap::ClapTrap( std::string name ) : _name( name ), _HP( 10 ), _EP( 10 ), _AD( 0 )
+ClapTrap::ClapTrap( std::string name ) : _name( name ), _hp( 10 ), _ep( 10 ), _ad( 0 )
 {
 	std::cout << " ~ ClapTrap Parametric Constructor called." << std::endl;
 }
@@ -38,37 +38,37 @@ ClapTrap	&ClapTrap::operator=( ClapTrap const &other )
 	if ( this != &other )
 	{	
 		this->_name = other._name;
-		this->_HP = other._HP;
-		this->_EP = other._EP;
-		this->_AD = other._AD;
+		this->_hp = other._hp;
+		this->_ep = other._ep;
+		this->_ad = other._ad;
 	}
 	return (*this);
 }
 
 void	ClapTrap::attack( const std::string& target )
 {
-	if (_HP <= 0 || _EP <= 0) {
+	if (_hp <= 0 || _ep <= 0) {
 		std::cout << "ClapTrap " << _name << " can't do anything." << std::endl;
 		return ;
 	}
-	std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _AD << " points of damage!" << std::endl;
-	this->_EP -= 1;
+	std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _ad << " points of damage!" << std::endl;
+	this->_ep -= 1;
 }
 
 void	ClapTrap::takeDamage( unsigned int amount )
 {
-	if (_HP < (int)amount) {
+	if (_hp < (int)amount) {
 		std::cout << "ClapTrap " << _name << " is out of combat." << std::endl;
-		_HP = 0;
+		_hp = 0;
 		return ;
 	}
-	this->_HP -= amount;
-	std::cout << "ClapTrap " << _name << " lost " << amount << " health points. New amount : " << _HP << std::endl;
+	this->_hp -= amount;
+	std::cout << "ClapTrap " << _name << " lost " << amount << " health points. New amount : " << _hp << std::endl;
 }
 
 void	ClapTrap::beRepaired( unsigned int amount )
 {
-	this->_HP += amount;
-	this->_EP --;
+	this->_hp += amount;
+	this->_ep --;
 	std::cout << "ClapTrap " << _name << " get repaired  causing " << amount << " energie points gained! " << std::endl;
 }

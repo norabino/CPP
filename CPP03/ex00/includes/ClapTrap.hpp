@@ -6,12 +6,12 @@
 /*   By: norabino <norabino@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 16:04:40 by norabino          #+#    #+#             */
-/*   Updated: 2025/11/16 12:51:31 by norabino         ###   ########.fr       */
+/*   Updated: 2025/11/16 13:23:34 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+#ifndef CLAPTRAP_hpP
+#define CLAPTRAP_hpP
 
 #include <iostream>
 
@@ -20,9 +20,9 @@ class ClapTrap
 private:
 	ClapTrap( void );
 	std::string 	_name;
-	unsigned int			_HP;
-	unsigned int			_EP;
-	unsigned int			_AD;
+	int			_hp;
+	int			_ep;
+	int			_ad;
 
 public:
 	ClapTrap( std::string name );
