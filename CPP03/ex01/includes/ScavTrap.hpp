@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
+/*   By: norabino <norabino@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 16:48:37 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/13 18:02:46 by norabino         ###   ########.fr       */
+/*   Updated: 2025/11/16 13:49:26 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@ class ScavTrap : public ClapTrap
 {
 private:
 	ScavTrap( void );
-	std::string 	_name;
-	unsigned int			_HP;
-	unsigned int			_EP;
-	unsigned int			_AD;
+protected:
+	std::string 	name_;
+	int			hp_;
+	int			ep_;
+	int			ad_;
+
 public:
 	ScavTrap( std::string name );
 	ScavTrap( ScavTrap const & other );

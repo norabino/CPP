@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
+/*   By: norabino <norabino@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 16:04:40 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/13 17:58:38 by norabino         ###   ########.fr       */
+/*   Updated: 2025/11/16 13:49:26 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ class ClapTrap
 {
 protected:
 	ClapTrap( void );
-	std::string 	_name;
-	unsigned int			_HP;
-	unsigned int			_EP;
-	unsigned int			_AD;
+	std::string 	name_;
+	int			hp_;
+	int			ep_;
+	int			ad_;
 
 public:
 	ClapTrap( std::string name );
