@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
+/*   By: norabino <norabino@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 16:08:29 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/13 16:47:02 by norabino         ###   ########.fr       */
+/*   Updated: 2025/11/16 12:16:00 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ ClapTrap::~ClapTrap ( void )
 void	ClapTrap::attack( const std::string& target )
 {
 	if (_HP <= 0 || _EP <= 0) {
-		std::cout << "⛑️   ClapTrap " << _name << " can't do anything." << std::endl;
+		std::cout << "ClapTrap " << _name << " can't do anything." << std::endl;
 		return ;
 	}
 	std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _AD << " points of damage!" << std::endl;
@@ -54,6 +54,7 @@ void	ClapTrap::takeDamage( unsigned int amount )
 		return ;
 	}
 	this->_HP -= amount;
+	std::cout << "ClapTrap " << _name << " lost " << amount << " health points. New amount : " << _HP << std::endl;
 }
 
 void	ClapTrap::beRepaired( unsigned int amount )
