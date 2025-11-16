@@ -3,29 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
+/*   By: norabino <norabino@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:39:07 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/14 14:45:52 by norabino         ###   ########.fr       */
+/*   Updated: 2025/11/16 13:45:35 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/FragTrap.hpp"
 
-FragTrap::FragTrap( std::string name ) : ClapTrap( name ), _name( name ), _HP( 100 ), _EP( 100 ), _AD( 30 )
+FragTrap::FragTrap( void )
 {
-	std::cout << "FragTrap Constructor called." << std::endl;
+	std::cout << " ⚒️  FragTrap Default Constructor called." << std::endl;
+}
+
+FragTrap::FragTrap( std::string name ) : ClapTrap( name ), _name( name ), _hp( 100 ), _ep( 100 ), _ad( 30 )
+{
+	std::cout << " ⚒️  FragTrap Parametric Constructor called." << std::endl;
 }
 
 FragTrap::FragTrap( FragTrap const &other ) : ClapTrap(other)
 {
-	std::cout << "FragTrap Copy constructor called." << std::endl;
+	std::cout << " ⚒️  FragTrap Copy constructor called." << std::endl;
 	*this = other;
 }
 
 FragTrap::~FragTrap()
 {
-	std::cout << "FragTrap Destructor called." << std::endl;
+	std::cout << " 🚧 FragTrap Destructor called." << std::endl;
 }
 
 FragTrap	&FragTrap::operator=( FragTrap const &other )
@@ -36,28 +41,29 @@ FragTrap	&FragTrap::operator=( FragTrap const &other )
 
 void	FragTrap::attack( const std::string& target )
 {
-	if (_HP <= 0 || _EP <= 0) {
+	if (_hp <= 0 || _ep <= 0) {
 		std::cout << "FragTrap " << _name << " can't do anything." << std::endl;
 		return ;
 	}
-	std::cout << "FragTrap " << _name << " attacks " << target << ", causing " << _AD << " points of damage!" << std::endl;
-	this->_EP -= 1;
+	std::cout << "FragTrap " << _name << " attacks " << target << ", causing " << _ad << " points of damage!" << std::endl;
+	this->_ep -= 1;
 }
 
 void	FragTrap::takeDamage( unsigned int amount )
 {
-	if (_HP < amount) {
+	if (_hp < (int)amount) {
 		std::cout << "FragTrap " << _name << " is out of combat." << std::endl;
-		_HP = 0;
+		_hp = 0;
 		return ;
 	}
-	this->_HP -= amount;
+	this->_hp -= amount;
+	std::cout << "FragTrap " << name_ << " lost " << amount << " health points. New amount : " << hp_ << std::endl;
 }
 
 void	FragTrap::beRepaired( unsigned int amount )
 {
-	this->_HP += amount;
-	this->_EP --;
+	this->_hp += amount;
+	this->_ep --;
 	std::cout << "FragTrap " << _name << " get repaired  causing " << amount << " energie points gained! " << std::endl;
 }
 

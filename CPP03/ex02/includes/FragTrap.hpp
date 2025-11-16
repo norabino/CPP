@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
+/*   By: norabino <norabino@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:36:45 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/14 14:52:56 by norabino         ###   ########.fr       */
+/*   Updated: 2025/11/16 13:49:26 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ class FragTrap : public ClapTrap
 private:
 	FragTrap( void );
 	std::string 	_name;
-	unsigned int			_HP;
-	unsigned int			_EP;
-	unsigned int			_AD;
+	unsigned int			_hp;
+	unsigned int			_ep;
+	unsigned int			_ad;
 public:
 	FragTrap( std::string name );
 	FragTrap( FragTrap const & other );
