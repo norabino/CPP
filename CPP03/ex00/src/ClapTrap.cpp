@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 16:08:29 by norabino          #+#    #+#             */
-/*   Updated: 2025/11/16 13:23:48 by norabino         ###   ########.fr       */
+/*   Updated: 2025/11/16 13:40:21 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 ClapTrap::ClapTrap( void ) : _name( "Default" ), _hp( 10 ), _ep( 10 ), _ad( 0 )
 {
-	std::cout << " ~ ClapTrap Default Constructor called." << std::endl;
+	std::cout << " ⚒️  ClapTrap Default Constructor called." << std::endl;
 }
 
 ClapTrap::ClapTrap( std::string name ) : _name( name ), _hp( 10 ), _ep( 10 ), _ad( 0 )
 {
-	std::cout << " ~ ClapTrap Parametric Constructor called." << std::endl;
+	std::cout << " ⚒️  ClapTrap Parametric Constructor called." << std::endl;
 }
 
 ClapTrap::ClapTrap( ClapTrap const &other )
 {
-	std::cout << " ~ ClapTrap Copy Constructor called." << std::endl;
+	std::cout << " ⚒️  ClapTrap Copy Constructor called." << std::endl;
 	*this = other;
 }
 
 ClapTrap::~ClapTrap ( void )
 {
-	std::cout << " ~ ClapTrap Destructor called." << std::endl;
+	std::cout << " 🚧 ClapTrap Destructor called." << std::endl;
 }
 
 ClapTrap	&ClapTrap::operator=( ClapTrap const &other )
