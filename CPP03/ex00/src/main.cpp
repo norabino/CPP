@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
+/*   By: norabino <norabino@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 16:45:08 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/13 16:46:44 by norabino         ###   ########.fr       */
+/*   Updated: 2025/11/16 13:10:28 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,8 @@ int	main( void )
 	ClapTrap V2("bonjour");
 
 	V1.attack("bonjour");
-	V2.takeDamage(120);
+	V2.takeDamage(10);
+	ClapTrap V3(V2);
+	V3.attack("allo");
+	V3.takeDamage(9);
 }

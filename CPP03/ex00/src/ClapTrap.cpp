@@ -6,34 +6,43 @@
 /*   By: norabino <norabino@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 16:08:29 by norabino          #+#    #+#             */
-/*   Updated: 2025/11/16 12:16:00 by norabino         ###   ########.fr       */
+/*   Updated: 2025/11/16 13:08:07 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ClapTrap.hpp"
 
+ClapTrap::ClapTrap( void ) : _name( "Default" ), _HP( 10 ), _EP( 10 ), _AD( 0 )
+{
+	std::cout << " ~ ClapTrap Default Constructor called." << std::endl;
+}
+
 ClapTrap::ClapTrap( std::string name ) : _name( name ), _HP( 10 ), _EP( 10 ), _AD( 0 )
 {
-	std::cout << "Constructor called." << std::endl;
+	std::cout << " ~ ClapTrap Parametric Constructor called." << std::endl;
 }
 
 ClapTrap::ClapTrap( ClapTrap const &other )
 {
+	std::cout << " ~ ClapTrap Copy Constructor called." << std::endl;
 	*this = other;
-	std::cout << "Copy constructor called." << std::endl;
-}
-
-ClapTrap	& ClapTrap::operator=( ClapTrap const &other )
-{
-	this->_name = other._name;
-	this->_HP = other._HP;
-	this->_EP = other._EP;
-	this->_AD = other._AD;
-	return (*this);
 }
 
 ClapTrap::~ClapTrap ( void )
 {
+	std::cout << " ~ ClapTrap Destructor called." << std::endl;
+}
+
+ClapTrap	&ClapTrap::operator=( ClapTrap const &other )
+{
+	if ( this != &other )
+	{	
+		this->_name = other._name;
+		this->_HP = other._HP;
+		this->_EP = other._EP;
+		this->_AD = other._AD;
+	}
+	return (*this);
 }
 
 void	ClapTrap::attack( const std::string& target )
