@@ -6,13 +6,13 @@
 /*   By: norabino <norabino@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:39:07 by norabino          #+#    #+#             */
-/*   Updated: 2025/11/16 13:55:16 by norabino         ###   ########.fr       */
+/*   Updated: 2025/11/16 13:57:45 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/FragTrap.hpp"
 
-FragTrap::FragTrap( void )
+FragTrap::FragTrap( void ) : name_( "Default" ), hp_( 100 ), ep_( 100 ), ad_( 30 )
 {
 	std::cout << " ⚒️  FragTrap Default Constructor called." << std::endl;
 }
