@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 16:08:29 by norabino          #+#    #+#             */
-/*   Updated: 2025/11/16 13:08:07 by norabino         ###   ########.fr       */
+/*   Updated: 2025/11/16 13:19:00 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	ClapTrap::attack( const std::string& target )
 
 void	ClapTrap::takeDamage( unsigned int amount )
 {
-	if (_HP < amount) {
+	if (_HP < (int)amount) {
 		std::cout << "ClapTrap " << _name << " is out of combat." << std::endl;
 		_HP = 0;
 		return ;
