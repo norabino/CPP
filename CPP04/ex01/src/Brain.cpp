@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
+/*   By: norabino <norabino@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 17:11:50 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/14 17:19:48 by norabino         ###   ########.fr       */
+/*   Updated: 2025/11/16 14:38:12 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,30 @@
 
 Brain::Brain( void )
 {
-	std::cout << "Brain constructor called" << std::endl;
+	std::cout << " ⚒️  Brain Constructor called." << std::endl;
 }
 
 Brain::Brain( Brain const & other )
 {
+	std::cout << " ⚒️  Brain Copy Constructor called." << std::endl;
 	*this = other;
 }
 
 Brain::~Brain( void )
 {
-	std::cout << "Brain destructor called" << std::endl;
+	std::cout << " 🚧 Brain Destructor called." << std::endl;
 }
 
 Brain const &Brain::operator=( Brain const & other )
 {
-	int	i = 0;
-
-	while (i < 100)
+	if ( this != &other )
 	{
-		this->ideas[i] = other.ideas[i];
-		i++;
+		int	i = 0;
+		while (i < 100)
+		{
+			this->ideas[i] = other.ideas[i];
+			i++;
+		}
 	}
 	return (*this);
 }
