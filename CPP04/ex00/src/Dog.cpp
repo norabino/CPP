@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 15:16:51 by norabino          #+#    #+#             */
-/*   Updated: 2025/11/16 14:39:29 by norabino         ###   ########.fr       */
+/*   Updated: 2025/11/17 16:24:42 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 Dog::Dog( std::string t )
 {
 	std::cout << " ⚒️  Dog Parametric Constructor called." << std::endl;
-	( void )t;
+	if ( t == "Dog")
+		this->type_ = t;
 }
 
 Dog::Dog( void )

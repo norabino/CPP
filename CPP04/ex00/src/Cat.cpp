@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 15:16:34 by norabino          #+#    #+#             */
-/*   Updated: 2025/11/16 14:24:32 by norabino         ###   ########.fr       */
+/*   Updated: 2025/11/17 16:24:45 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 Cat::Cat( std::string t )
 {
 	std::cout << " ⚒️  Cat Parametric Constructor called." << std::endl;
-	( void )t;
+	if ( t == "Cat")
+		this->type_ = t;
 }
 
 

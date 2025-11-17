@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 15:26:49 by norabino          #+#    #+#             */
-/*   Updated: 2025/11/16 14:31:34 by norabino         ###   ########.fr       */
+/*   Updated: 2025/11/17 16:22:19 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	main( void )
 	const Animal* i = new Cat();
 	const WrongAnimal* w = new WrongCat();
 
+	std::cout << meta->getType() << " " << std::endl;
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 	//std::cout << w->getType() << " " << std::endl;
