@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:58:27 by norabino          #+#    #+#             */
-/*   Updated: 2025/11/16 14:22:22 by norabino         ###   ########.fr       */
+/*   Updated: 2025/11/17 17:00:36 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ public:
 
 	Animal const &operator=( Animal const & );
 	virtual void	makeSound( void ) const;
-	std::string	getType( void ) const;
+	virtual std::string	getType( void ) const;
 };
