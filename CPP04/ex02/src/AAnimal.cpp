@@ -3,35 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
+/*   By: norabino <norabino@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 15:07:10 by norabino          #+#    #+#             */
-/*   Updated: 2025/10/14 17:49:08 by norabino         ###   ########.fr       */
+/*   Created: 2025/11/17 17:01:47 by norabino          #+#    #+#             */
+/*   Updated: 2025/11/17 17:02:11 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/AAnimal.hpp"
 
+AAnimal::AAnimal( std::string t )
+{
+	std::cout << " ⚒️  AAnimal Parametric Constructor called." << std::endl;
+	( void )t;
+}
+
+
 AAnimal::AAnimal( void ) : type_( "" )
 {
-	std::cout << "AAnimal constructor called." << std::endl;
+	std::cout << " ⚒️  AAnimal Default Constructor called." << std::endl;
 }
 
 AAnimal::AAnimal( AAnimal const & other )
 {
-	std::cout << "AAnimal copy constructor called." << std::endl;
+	std::cout << " ⚒️  AAnimal Copy Constructor called." << std::endl;
 	*this = other;
 }
 
 AAnimal const	&AAnimal::operator=( AAnimal const &other )
 {
-	this->type_ = other.type_;
+	if ( this != &other )
+		this->type_ = other.type_;
 	return ( *this );
 }
 
 AAnimal::~AAnimal( void )
 {
-	std::cout << "AAnimal destructor called." << std::endl;
+	std::cout << " 🚧 AAnimal Destructor called." << std::endl;
 }
 
 void	AAnimal::makeSound( void ) const
