@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 17:21:31 by norabino          #+#    #+#             */
-/*   Updated: 2025/11/07 17:38:18 by norabino         ###   ########.fr       */
+/*   Updated: 2026/01/05 11:59:18 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ bool Form::getSigned() const
 
 std::ostream &operator<<( std::ostream &os, const Form &instance )
 {
-	os << "Form " << instance.getName() << " Grade: " << instance.getGradeToSign() << " & " << instance.getGradeToExec() << " status signed: " << instance.getSigned() << std::endl;
+	os << "Name(" << instance.getName() << ") | " 
+	<< "Grades(" << instance.getGradeToSign() << ", " << instance.getGradeToExec() << ") | "
+	<< "Signed(" << instance.getSigned() << ")" << std::endl;
 	return ( os );
 }
