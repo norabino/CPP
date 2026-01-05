@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 12:33:14 by norabino          #+#    #+#             */
-/*   Updated: 2025/11/07 15:59:05 by norabino         ###   ########.fr       */
+/*   Updated: 2026/01/05 11:41:24 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,15 +61,14 @@ int	main( void )
 		eve.IncrementGrade();
 		eve.IncrementGrade();
 		eve.IncrementGrade();
-		eve.IncrementGrade();
-		eve.IncrementGrade();
-		eve.IncrementGrade();
 		eve.DecrementGrade();
+		eve.IncrementGrade();
+		eve.IncrementGrade();
+		std::cout << eve << std::endl;
 	}
 	catch (const std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-
 	return ( 0 );
 }

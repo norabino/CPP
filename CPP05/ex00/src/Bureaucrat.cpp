@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 12:28:40 by norabino          #+#    #+#             */
-/*   Updated: 2025/11/07 16:11:07 by norabino         ###   ########.fr       */
+/*   Updated: 2025/11/07 16:34:18 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,6 @@ void	Bureaucrat::DecrementGrade()
 
 std::ostream &operator<<( std::ostream &os, Bureaucrat const &instance )
 {
-	os << "NAME : " << instance.getName() << " | " << "GRADE : " << instance.getGrade() << std::endl;
+	os << instance.getName() << ", bureaucrat grade " << instance.getGrade() << "." << std::endl;
 	return ( os );
 }
