@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 12:33:14 by norabino          #+#    #+#             */
-/*   Updated: 2026/01/05 12:18:42 by norabino         ###   ########.fr       */
+/*   Updated: 2026/01/05 12:29:22 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ int main(void)
 	std::cout << "\nAttempting to sign 'Form3' with 'Jane'..." << std::endl;
 	try
 	{
-		Form form3("Form3", 3, 12);
+		Form form3("Form3", 2, 12);
+		jane.signForm(form3);
 		form3.beSigned(jane);
 		std::cout << "Form signed: " << form3 << std::endl;
 	}
@@ -70,7 +71,7 @@ int main(void)
 	std::cout << "\nAttempting to sign 'Form4' with 'Alice' using signForm..." << std::endl;
 	try
 	{
-		Form form4("Form4", 1, 12);
+		Form form4("Form4", -1, 12);
 		alice.signForm(form4);
 	}
 	catch (std::exception &e)
