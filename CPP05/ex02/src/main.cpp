@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 12:33:14 by norabino          #+#    #+#             */
-/*   Updated: 2026/01/06 15:11:31 by norabino         ###   ########.fr       */
+/*   Updated: 2026/01/06 15:34:59 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(void)
 {
 	Bureaucrat highGrade("Boss", 1);
 	Bureaucrat midGrade("Employee", 50);
-	Bureaucrat lowGrade("Intern", 150);
+	Bureaucrat lowGrade("Dude", 150);
 
 	ShrubberyCreationForm shrubbery("garden");
 	RobotomyRequestForm robotomy("target");

@@ -21,6 +21,7 @@ $(NAME): $(OBJECTS)
 
 clean:
 	rm -rf $(OBJDIR)
+	rm -rf *_shrubbery
 
 fclean: clean
 	rm -f $(NAME)
