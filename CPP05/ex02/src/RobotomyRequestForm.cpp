@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 13:28:20 by norabino          #+#    #+#             */
-/*   Updated: 2026/01/06 15:27:51 by norabino         ###   ########.fr       */
+/*   Updated: 2026/01/06 19:06:44 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@
 
 void RobotomyRequestForm::execute( Bureaucrat const & executor ) const
 {
+	if (!this->getSigned())
+		throw AForm::AFormNotSigned();
+	if (executor.getGrade() > this->getGradeToExec())
+		throw AForm::GradeTooLowException();
+
 	std::cout << executor.getName() << " executed " << this->getName() << " 🖥️" << std::endl;
 
 	std::cout << "Grrrrrr... Drrrrrrr... *drilling noises* 🪛" << std::endl;
@@ -44,6 +49,13 @@ RobotomyRequestForm::RobotomyRequestForm( std::string target ) : AForm("Robotomy
 
 RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm & other ) : AForm(other), _target(other._target)
 {
+}
+
+const RobotomyRequestForm &RobotomyRequestForm::operator=( const RobotomyRequestForm &other )
+{
+	AForm::operator=(other);
+	_target = other._target;
+	return (*this);
 }
 
 std::string RobotomyRequestForm::getTarget( void ) const

@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 13:19:55 by norabino          #+#    #+#             */
-/*   Updated: 2026/01/06 15:38:33 by norabino         ###   ########.fr       */
+/*   Updated: 2026/01/06 19:06:44 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 
 void ShrubberyCreationForm::execute( Bureaucrat const & executor ) const
 {
+	if (!this->getSigned())
+		throw AForm::AFormNotSigned();
+	if (executor.getGrade() > this->getGradeToExec())
+		throw AForm::GradeTooLowException();
+
 	std::cout << executor.getName() << " executed " << this->getName() << " 🖥️"  << std::endl;
 
 	std::ofstream fileOut;
@@ -62,6 +67,13 @@ ShrubberyCreationForm::ShrubberyCreationForm( std::string target ) : AForm("Shru
 
 ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm & other ) : AForm(other), _target(other._target)
 {
+}
+
+const ShrubberyCreationForm &ShrubberyCreationForm::operator=( const ShrubberyCreationForm &other )
+{
+	AForm::operator=(other);
+	_target = other._target;
+	return (*this);
 }
 
 std::string ShrubberyCreationForm::getTarget( void ) const
