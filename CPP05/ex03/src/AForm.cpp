@@ -6,14 +6,14 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 13:21:06 by norabino          #+#    #+#             */
-/*   Updated: 2026/01/05 13:21:49 by norabino         ###   ########.fr       */
+/*   Updated: 2026/01/06 18:15:19 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/AForm.hpp"
 #include "../includes/Bureaucrat.hpp"
 
-AForm::AForm( void ) : _signGrade( 150 ), _execGrade( 150 )
+AForm::AForm( void ) : _name("Default"), _signed(false), _signGrade( 150 ), _execGrade( 150 )
 {
 }
 

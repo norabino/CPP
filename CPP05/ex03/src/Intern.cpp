@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 15:50:23 by norabino          #+#    #+#             */
-/*   Updated: 2026/01/06 16:49:17 by norabino         ###   ########.fr       */
+/*   Updated: 2026/01/06 19:06:44 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,15 @@ Intern::~Intern( void )
 	//std::cout << "Intern deleted." << std::endl;
 }
 
-Intern::Intern( std::string nothing )
-{
-	(void)nothing;
-}
-
 Intern::Intern( Intern const &other )
 {
 	*this = other;
+}
+
+const Intern &Intern::operator=( const Intern &other )
+{
+	(void)other;
+	return (*this);
 }
 
 AForm	*makeShrubbery( std::string target )
