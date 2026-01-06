@@ -6,14 +6,14 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 12:28:40 by norabino          #+#    #+#             */
-/*   Updated: 2025/11/07 17:14:41 by norabino         ###   ########.fr       */
+/*   Updated: 2026/01/06 19:06:44 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Bureaucrat.hpp"
 #include "../includes/Form.hpp"
 
-Bureaucrat::Bureaucrat( void )
+Bureaucrat::Bureaucrat( void ) : _name("Default"), _grade(150)
 {
 	std::cout << "New Bureaucrat created." << std::endl;
 }
