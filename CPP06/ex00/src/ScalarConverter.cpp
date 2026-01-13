@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 16:59:21 by norabino          #+#    #+#             */
-/*   Updated: 2026/01/13 13:58:44 by norabino         ###   ########.fr       */
+/*   Updated: 2026/01/13 14:30:17 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,6 +139,10 @@ void	ScalarConverter::convert( std::string input )
 	{
 		toDouble = std::strtod( input.c_str(), NULL );
 		toFloat = static_cast<float>( toDouble );
+
+		// Check if float conversion is truly impossible (overflow to infinity)
+		if ( std::isinf(toFloat) && !std::isinf(toDouble) )
+			floatImpossible = true;
 
 		if ( toDouble < INT_MIN || toDouble > INT_MAX || std::isnan(toDouble) || std::isinf(toDouble) )
 			intImpossible = true;

@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 16:59:14 by norabino          #+#    #+#             */
-/*   Updated: 2026/01/13 13:53:27 by norabino         ###   ########.fr       */
+/*   Updated: 2026/01/13 14:16:53 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@
 #include <cmath>
 #include <cerrno>
 #include <climits>
-#include <cctype>	
+#include <cctype>
+#include <cfloat>	
 
 class ScalarConverter
 {
