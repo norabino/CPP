@@ -1,0 +1,161 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScalarConverter.cpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/09 16:59:21 by norabino          #+#    #+#             */
+/*   Updated: 2026/01/13 13:58:44 by norabino         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../includes/ScalarConverter.hpp"
+
+ScalarConverter::ScalarConverter( void )
+{
+	std::cout << "ScalarConverter default constructor called." << std::endl;
+}
+
+ScalarConverter::ScalarConverter( std::string )
+{
+	std::cout << "ScalarConverter parametric constructor called." << std::endl;
+}
+
+ScalarConverter::ScalarConverter( ScalarConverter const & other )
+{
+	std::cout << "ScalarConverter copy constructor called." << std::endl;
+	*this = other;
+}
+
+ScalarConverter const	&ScalarConverter::operator=( ScalarConverter const &other )
+{
+	(void)other;
+	return ( *this );
+}
+
+ScalarConverter::~ScalarConverter( void )
+{
+	std::cout << "ScalarConverter destructor called." << std::endl;
+}
+
+
+static void print_results( std::string const &toChar, bool intImpossible, bool floatImpossible, bool doubleImpossible, int toInt, float toFloat, double toDouble )
+{
+	std::cout << "char: " << toChar << std::endl;
+
+	if (intImpossible)
+		std::cout << "int: impossible" << std::endl;
+	else
+		std::cout << "int: " << toInt << std::endl;
+
+	if (floatImpossible)
+		std::cout << "float: impossible" << std::endl;
+	else
+		std::cout << "float: " << std::fixed << std::setprecision(1) << toFloat << "f" << std::endl;
+
+	if (doubleImpossible)
+		std::cout << "double: impossible" << std::endl;
+	else
+		std::cout << "double: " << std::fixed << std::setprecision(1) << toDouble << std::endl;
+}
+
+static bool parser( std::string const &input )
+{
+	if (input == "nan" ||
+		input == "nanf" ||
+		input == "+inf" ||
+		input == "-inf" ||
+		input == "+inff" ||
+		input == "-inff" )
+		return ( true );
+
+	if ( input.length() == 1 && std::isprint(input[0]) )
+		return ( true );
+
+	size_t	i = 0;
+	bool	hasDigit = false;
+
+	if ( input[i] == '+' || input[i] == '-' )
+		i++;
+
+	while ( i < input.length() && std::isdigit(input[i]) )
+	{
+		hasDigit = true;
+		i++;
+	}
+
+	if ( i < input.length() && input[i] == '.')
+	{
+		i++;
+		while ( i < input.length() && std::isdigit(input[i]) )
+		{
+			hasDigit = true;
+			i++;
+		}
+	}
+
+	if ( !hasDigit )
+		return ( false );
+
+	if ( i == input.length() )
+		return ( true );
+	
+	if ( i == input.length() - 1 && input[i] == 'f' )
+		return ( true );
+
+	return ( false );
+}
+
+static void convert_single_input( char c, std::string &toChar, int &toInt, float &toFloat, double &toDouble )
+{
+	toChar = "'";
+	toChar += c;
+	toChar += "'";
+	toInt = static_cast<int>(c);
+	toFloat = static_cast<float>(c);
+	toDouble = static_cast<double>(c);
+}
+
+void	ScalarConverter::convert( std::string input )
+{
+	if ( !parser(input) )
+	{
+		std::cout << "Error : Invalid input" << std::endl;
+		return ;
+	}
+
+	std::string toChar = "impossible";
+	int		toInt = 0;
+	float	toFloat = 0.0f;
+	double	toDouble = 0.0;
+	bool	intImpossible = false;
+	bool	floatImpossible = false;
+	bool	doubleImpossible = false;
+
+	if ( input.length() == 1 && std::isprint(input[0]) && !std::isdigit(input[0]) )
+		convert_single_input( input[0], toChar, toInt, toFloat, toDouble );
+	else
+	{
+		toDouble = std::strtod( input.c_str(), NULL );
+		toFloat = static_cast<float>( toDouble );
+
+		if ( toDouble < INT_MIN || toDouble > INT_MAX || std::isnan(toDouble) || std::isinf(toDouble) )
+			intImpossible = true;
+		else
+			toInt = static_cast<int>( toDouble );
+
+		if ( intImpossible || toInt < 0 || toInt > 127 )
+			toChar = "impossible";
+		else if ( toInt < 32 || toInt > 126 )
+			toChar = "non-displayable";
+		else
+		{
+			toChar = "'";
+			toChar += static_cast<char>( toInt );
+			toChar += "'";
+		}
+	}
+	
+	print_results( toChar, intImpossible, floatImpossible, doubleImpossible, toInt, toFloat, toDouble );
+}
