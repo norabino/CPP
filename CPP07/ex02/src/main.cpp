@@ -6,33 +6,32 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 15:43:05 by norabino          #+#    #+#             */
-/*   Updated: 2026/01/27 16:25:52 by norabino         ###   ########.fr       */
+/*   Updated: 2026/01/27 16:33:07 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Array.hpp"
+#include <iostream>
 
 /*int main( void )
 {
-	Array<int> A;
-	Array<int> B(5);
+	Array<char> A;
+	Array<char> B(5);
 
 	try
 	{
-		B[0] = 1;
+		B[0] = 'a';
 		A = B;
-		//A[15] = 7;
-		A[1] = 2;
+		A[15] = 'c';
+		A[1] = 'b';
 	}
 	catch ( const std::exception& e )
 	{
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << A << std::endl;
-	return ( 0 );
 	std::cout << B << std::endl;
-	delete [] A;
-	delete [] B;
+	return ( 0 );
 }*/
 
 #include <iostream>
