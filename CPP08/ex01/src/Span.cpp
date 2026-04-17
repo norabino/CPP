@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 14:33:37 by norabino          #+#    #+#             */
-/*   Updated: 2026/01/30 15:51:32 by norabino         ###   ########.fr       */
+/*   Updated: 2026/04/17 11:04:20 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,14 @@
 
 Span::Span( void ) : _N ( 0 )
 {
-	std::cout << "Span default constructor called." << std::endl;
 }
 
 Span::Span( unsigned int N ) : _N ( N )
 {
-	std::cout << "Span parametric constructor called." << std::endl;
-	
 }
 
 Span::Span( Span const & other )
 {
-	std::cout << "Span copy constructor called." << std::endl;
 	*this = other;
 }
 
@@ -41,7 +37,6 @@ Span const	&Span::operator=( Span const &other )
 
 Span::~Span( void )
 {
-	std::cout << "Span destructor called." << std::endl;
 }
 
 void	Span::addNumber( int n )
@@ -49,13 +44,6 @@ void	Span::addNumber( int n )
 	if ( _container.size() >= _N )
 		throw FullContainerException();
 	this->_container.push_back( n );
-}
-
-void	Span::addMultipleNumbers( std::vector<int>::iterator begin, std::vector<int>::iterator end )
-{
-	if ( _container.size() + std::distance(begin, end) > _N )
-		throw FullContainerException();
-	_container.insert( _container.end(), begin, end );
 }
 
 int Span::shortestSpan( void )

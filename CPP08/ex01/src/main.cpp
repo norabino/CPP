@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 14:37:05 by norabino          #+#    #+#             */
-/*   Updated: 2026/03/10 13:01:31 by marvin           ###   ########.fr       */
+/*   Updated: 2026/04/17 11:05:17 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Span.hpp"
 
-/*int main()
+int main()
 {
 	std::cout << "\033[33m" << "Test vector container\n"<< "\033[0m";
 	Span sp = Span(5);
@@ -82,9 +82,9 @@
 	{
 		std::cout << e.what() << std::endl;
 	}
-}*/
+}
 
-int main()
+/*int main()
 {
 	Span sp = Span(5);
 	sp.addNumber(6);
@@ -95,4 +95,4 @@ int main()
 	std::cout << sp.shortestSpan() << std::endl;
 	std::cout << sp.longestSpan() << std::endl;
 	return 0;
-}
+}*/

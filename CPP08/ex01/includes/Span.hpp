@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 14:34:09 by norabino          #+#    #+#             */
-/*   Updated: 2026/01/30 15:51:14 by norabino         ###   ########.fr       */
+/*   Updated: 2026/04/17 11:04:20 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <algorithm>
 #include <exception>
 #include <vector>
+#include <iterator>
 
 class Span
 {
@@ -32,7 +33,15 @@ public:
 	Span const &operator=(const Span &other);
 
 	void addNumber( int );
-	void addMultipleNumbers( std::vector<int>::iterator, std::vector<int>::iterator );
+
+	template <typename InputIterator>
+	void addMultipleNumbers( InputIterator begin, InputIterator end )
+	{
+		const std::size_t count = static_cast<std::size_t>(std::distance(begin, end));
+		if ( _container.size() + count > _N )
+			throw FullContainerException();
+		_container.insert( _container.end(), begin, end );
+	}
 
 	int shortestSpan( void );
 	int longestSpan( void );
