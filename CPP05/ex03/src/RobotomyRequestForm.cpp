@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 13:28:20 by norabino          #+#    #+#             */
-/*   Updated: 2026/01/06 19:06:44 by norabino         ###   ########.fr       */
+/*   Updated: 2026/04/17 11:05:55 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,13 @@ void RobotomyRequestForm::execute( Bureaucrat const & executor ) const
 	std::cout << executor.getName() << " executed " << this->getName() << " 🖥️" << std::endl;
 
 	std::cout << "Grrrrrr... Drrrrrrr... *drilling noises* 🪛" << std::endl;
-	
-	srand(time(NULL));
+
+	static bool seeded = false;
+	if (!seeded)
+	{
+		srand(time(NULL));
+		seeded = true;
+	}
 	int nb = rand() % 2;
 	if (nb)
 		std::cout << this->getTarget() << " has been robotomized successfully! ✅" << std::endl;

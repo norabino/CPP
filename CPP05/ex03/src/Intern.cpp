@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 15:50:23 by norabino          #+#    #+#             */
-/*   Updated: 2026/01/06 19:06:44 by norabino         ###   ########.fr       */
+/*   Updated: 2026/04/17 11:05:55 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,13 @@ AForm *Intern::makeForm( std::string formName, std::string target )
 	AForm *(*formMakers[3])(std::string) = { makeShrubbery, makeRobotomy, makePresidential };
 
 	int i = 0;
-	while (formName != formNames[i] && i < 3)
+	while (i < 3 && formName != formNames[i])
 		i++;
 	if (i < 3)
 	{
 		std::cout << "Intern creates ";
 		return ( formMakers[i](target) );
 	}
-	else
-		throw AForm::NameInexistant();
+	throw AForm::NameInexistant();
 	return ( NULL );
 }
