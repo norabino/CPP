@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 14:34:51 by norabino          #+#    #+#             */
-/*   Updated: 2026/02/02 14:46:25 by norabino         ###   ########.fr       */
+/*   Updated: 2026/04/17 11:04:20 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,16 @@
 template <typename T>
 MutantStack<T>::MutantStack( void ) : std::stack<T>()
 {
-	std::cout << "MutantStack default constructor called." << std::endl;
-	
 }
 
 template <typename T>
 MutantStack<T>::MutantStack( int )
 {
-	std::cout << "MutantStack parametric constructor called." << std::endl;
-	
 }
 
 template <typename T>
 MutantStack<T>::MutantStack( MutantStack const & other )
 {
-	std::cout << "MutantStack copy constructor called." << std::endl;
 	std::stack<T>::operator=(other);
 }
 
@@ -44,7 +39,6 @@ MutantStack<T> const	&MutantStack<T>::operator=( MutantStack const &other )
 template <typename T>
 MutantStack<T>::~MutantStack( void )
 {
-	std::cout << "MutantStack destructor called." << std::endl;
 }
 
 /*
