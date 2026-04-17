@@ -6,27 +6,21 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 16:13:36 by norabino          #+#    #+#             */
-/*   Updated: 2026/02/06 16:01:02 by norabino         ###   ########.fr       */
+/*   Updated: 2026/04/17 11:03:09 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/BitcoinExchange.hpp"
+#include <cctype>
+#include <sys/stat.h>
 
 BitcoinExchange::BitcoinExchange( void )
 {
 	_readDatabase();
-	//std::cout << "BitcoinExchange default constructor called." << std::endl;
-}
-
-BitcoinExchange::BitcoinExchange( std::string )
-{
-	std::cout << "BitcoinExchange parametric constructor called." << std::endl;
-	
 }
 
 BitcoinExchange::BitcoinExchange( BitcoinExchange const & other )
 {
-	std::cout << "BitcoinExchange copy constructor called." << std::endl;
 	*this = other;
 }
 
@@ -39,7 +33,31 @@ BitcoinExchange const	&BitcoinExchange::operator=( BitcoinExchange const &other 
 
 BitcoinExchange::~BitcoinExchange( void )
 {
-	//std::cout << "BitcoinExchange destructor called." << std::endl;
+}
+
+const char *BitcoinExchange::CannotOpenFileException::what() const throw()
+{
+	return ( "Error: could not open file given in argument." );
+}
+
+const char *BitcoinExchange::InvalidInputLineFormatException::what() const throw()
+{
+	return ( "Error: Invalid line format. Expected 'date,value'" );
+}
+
+const char *BitcoinExchange::InvalidDataLineFormatException::what() const throw()
+{
+	return ( "Error: Invalid line format. Expected 'date,exchange_rate'" );
+}
+
+const char *BitcoinExchange::InvalidDateFormatException::what() const throw()
+{
+	return ( "Error: Invalid date format. Expected 'YYYY-MM-DD'" );
+}
+
+const char *BitcoinExchange::InvalidPriceFormatException::what() const throw()
+{
+	return ( "Error: Invalid price format. Expected a number between 0.0 and 1000.0" );
 }
 
 void	BitcoinExchange::_readDatabase( void )
@@ -73,23 +91,22 @@ bool	checkFile( std::string filename )
 	struct	stat info;
 
 	if ( stat(filename.c_str(), &info) )
-		return ( std::cout << "File inexistant.." << std::endl, false );
+		return ( false );
 	if ( info.st_mode & S_IFDIR )
-		return ( std::cout << "The 'file' is a directory.." << std::endl, false );
+		return ( false );
 	return ( true );
 }
 
-void	clearStr( std::string &str )
+static std::string	trim( std::string const &str )
 {
-	size_t	i = 0;
+	size_t	start = 0;
+	size_t	end = str.length();
 
-	while ( i < str.length() )
-	{
-		if ( isspace(str[i]) )
-			str.erase(i, 1);
-		else
-			i++;
-	}
+	while ( start < end && std::isspace(static_cast<unsigned char>(str[start])) )
+		start++;
+	while ( end > start && std::isspace(static_cast<unsigned char>(str[end - 1])) )
+		end--;
+	return ( str.substr(start, end - start) );
 }
 
 
@@ -150,9 +167,15 @@ bool	checkDate( std::string const &date )
 double	checkBtcAmount( std::string const &value )
 {
 	double	btcAmount;
+	char	trailing;
 	std::istringstream amountStream( value );
 
 	if ( !( amountStream >> btcAmount) )
+	{
+		std::cout << "Error: bad input => " << value << std::endl;
+		return ( -1 );
+	}
+	if ( amountStream >> trailing )
 	{
 		std::cout << "Error: bad input => " << value << std::endl;
 		return ( -1 );
@@ -179,11 +202,12 @@ void	BitcoinExchange::_displayExchangeResult( std::string const &date, double bt
 	else
 	{
 		std::map<std::string, double>::iterator it2 = _exchangeMap.lower_bound( date );
-		if ( it2 == _exchangeMap.begin() )
+		if ( it2 == _exchangeMap.begin() && (it2 == _exchangeMap.end() || it2->first != date) )
 			std::cout << date << " => " << btcAmount << " = " << btcAmount * it2->second << std::endl;
 		else
 		{
-			it2--;
+			if ( it2 == _exchangeMap.end() || it2->first != date )
+				it2--;
 			std::cout << date << " => " << btcAmount << " = " << btcAmount * it2->second << std::endl;
 		}
 	}
@@ -202,15 +226,17 @@ void BitcoinExchange::execute( std::string filename )
 		throw InvalidInputLineFormatException();
 	while ( std::getline( file, line ) )
 	{
-		std::istringstream ss( line );
-		std::string date;
-		std::string amount;
+		size_t	sep = line.find(" | ");
+		std::string	date;
+		std::string	amount;
 
-		std::getline( ss, date, '|' );
-		std::getline( ss, amount, '|' );
-
-		clearStr( date );
-		clearStr( amount );
+		if ( sep == std::string::npos || line.find('|', sep + 3) != std::string::npos )
+		{
+			std::cout << "Error: bad input => " << line << std::endl;
+			continue;
+		}
+		date = trim(line.substr(0, sep));
+		amount = trim(line.substr(sep + 3));
 
 		if( date.empty() || amount.empty() )
 		{
