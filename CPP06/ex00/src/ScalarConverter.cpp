@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 16:59:21 by norabino          #+#    #+#             */
-/*   Updated: 2026/01/13 14:30:17 by norabino         ###   ########.fr       */
+/*   Updated: 2026/04/17 11:00:38 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,19 @@ static void print_results( std::string const &toChar, bool intImpossible, bool f
 
 	if (floatImpossible)
 		std::cout << "float: impossible" << std::endl;
+	else if ( std::isnan(toFloat) )
+		std::cout << "float: nanf" << std::endl;
+	else if ( std::isinf(toFloat) )
+		std::cout << "float: " << ( std::signbit(toFloat) ? "-inff" : "+inff" ) << std::endl;
 	else
 		std::cout << "float: " << std::fixed << std::setprecision(1) << toFloat << "f" << std::endl;
 
 	if (doubleImpossible)
 		std::cout << "double: impossible" << std::endl;
+	else if ( std::isnan(toDouble) )
+		std::cout << "double: nan" << std::endl;
+	else if ( std::isinf(toDouble) )
+		std::cout << "double: " << ( std::signbit(toDouble) ? "-inf" : "+inf" ) << std::endl;
 	else
 		std::cout << "double: " << std::fixed << std::setprecision(1) << toDouble << std::endl;
 }
@@ -72,6 +80,9 @@ static bool parser( std::string const &input )
 
 	if ( input.length() == 1 && std::isprint(input[0]) )
 		return ( true );
+
+	if ( input.empty() )
+		return ( false );
 
 	size_t	i = 0;
 	bool	hasDigit = false;
@@ -152,7 +163,7 @@ void	ScalarConverter::convert( std::string input )
 		if ( intImpossible || toInt < 0 || toInt > 127 )
 			toChar = "impossible";
 		else if ( toInt < 32 || toInt > 126 )
-			toChar = "non-displayable";
+			toChar = "Non displayable";
 		else
 		{
 			toChar = "'";
