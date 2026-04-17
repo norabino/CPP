@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 14:31:39 by norabino          #+#    #+#             */
-/*   Updated: 2026/01/27 16:02:47 by norabino         ###   ########.fr       */
+/*   Updated: 2026/04/17 10:49:23 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,6 @@ public:
 	const T &operator[](unsigned int n) const;
 
 	unsigned int size() const;
-
-	template <typename U>
-	friend std::ostream& operator<<(std::ostream& os, const Array<U>& array);
 };
 
 

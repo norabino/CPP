@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 17:20:51 by norabino          #+#    #+#             */
-/*   Updated: 2026/01/30 14:32:37 by norabino         ###   ########.fr       */
+/*   Updated: 2026/04/17 10:49:23 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,20 +85,4 @@ template <typename T>
 unsigned int Array<T>::size() const
 {
 	return ( _size );
-}
-
-template <typename T>
-std::ostream& operator<<(std::ostream& os, const Array<T>& array)
-{
-	unsigned int i = 0;
-	os << "Array(size=" << array.size() << ")[";
-	while( i < array._size )
-	{
-		os << array._array[i];
-		if (i < array._size - 1)
-			os << ", ";
-		i++;
-	}
-	os << "]";
-	return ( os );
 }
