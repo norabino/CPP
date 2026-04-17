@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 12:28:40 by norabino          #+#    #+#             */
-/*   Updated: 2026/01/06 19:06:44 by norabino         ###   ########.fr       */
+/*   Updated: 2026/04/17 11:05:54 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,6 @@ void Bureaucrat::signForm( Form  &form )
 
 std::ostream &operator<<( std::ostream &os, Bureaucrat const &instance )
 {
-	os << "NAME : " << instance.getName() << " | " << "GRADE : " << instance.getGrade() << std::endl;
+	os << instance.getName() << ", bureaucrat grade " << instance.getGrade() << "." << std::endl;
 	return ( os );
 }
