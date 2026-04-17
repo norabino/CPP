@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 12:28:40 by norabino          #+#    #+#             */
-/*   Updated: 2026/01/06 18:15:19 by norabino         ###   ########.fr       */
+/*   Updated: 2026/04/17 11:05:54 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,16 +101,12 @@ void Bureaucrat::signForm( AForm  &form )
 	}
 }
 
-void Bureaucrat::executeForm( AForm const &form )
+void Bureaucrat::executeForm( AForm const &form ) const
 {
 	try
 	{
-		if (!form.getSigned())
-			throw AForm::AFormNotSigned();
-		if (this->getGrade() > form.getGradeToExec())
-			throw AForm::GradeTooLowException();
-		
 		form.execute( *this );
+		std::cout << this->_name << " executed " << form.getName() << std::endl;
 	}
 	catch (const std::exception &e)
 	{
@@ -120,6 +116,6 @@ void Bureaucrat::executeForm( AForm const &form )
 
 std::ostream &operator<<( std::ostream &os, Bureaucrat const &instance )
 {
-	os << "NAME : " << instance.getName() << " | " << "GRADE : " << instance.getGrade() << std::endl;
+	os << instance.getName() << ", bureaucrat grade " << instance.getGrade() << "." << std::endl;
 	return ( os );
 }

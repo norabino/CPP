@@ -6,7 +6,7 @@
 /*   By: norabino <norabino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 12:42:44 by norabino          #+#    #+#             */
-/*   Updated: 2026/01/06 18:15:19 by norabino         ###   ########.fr       */
+/*   Updated: 2026/04/17 11:05:55 by norabino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ private:
 
 public:
 	AForm( void );
-	~AForm( void );
+	virtual ~AForm( void );
 	AForm( std::string n, int sg, int eg );
 	AForm( const AForm & ); 
 
