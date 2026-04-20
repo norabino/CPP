@@ -15,7 +15,7 @@
 template <typename T>
 Array<T>::Array( void )
 {
-	std::cout << "Array default constructor called." << std::endl;
+	//std::cout << "Array default constructor called." << std::endl;
 	this->_array = NULL;
 	this->_size = 0;
 }
@@ -23,7 +23,7 @@ Array<T>::Array( void )
 template <typename T>
 Array<T>::Array( unsigned int n )
 {
-	std::cout << "Array parametric constructor called." << std::endl;
+	//std::cout << "Array parametric constructor called." << std::endl;
 	this->_array = new T[n]();
 	this->_size = n;
 
@@ -31,7 +31,7 @@ Array<T>::Array( unsigned int n )
 template <typename T>
 Array<T>::Array( Array const & other )
 {
-	std::cout << "Array copy constructor called." << std::endl;
+	//std::cout << "Array copy constructor called." << std::endl;
 	this->_array = NULL;
 	this->_size = 0;
 	*this = other;
